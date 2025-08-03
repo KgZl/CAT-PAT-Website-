@@ -1,0 +1,155 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Pivot Chart Summary</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial; margin: 20px; background: #f5f5f5; }
+    canvas { background: #fff; border-radius: 10px; }
+    h1 { margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        nav {
+            background-color: #222;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://wallpaperaccess.com/full/5651982.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    min-height: 100vh;
+  }
+
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #00ffe7;
+    text-shadow: 0 0 10px #00ffe7;
+  }
+
+  canvas {
+    display: block;
+    margin: 20px auto;
+    background: #ffffffdd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+
+    </style>
+<nav>
+    <a href="Home page.html">Home</a>
+    <a href="Data Table.html">Data Table</a>
+    <a href="Survey Calculations.html">Calculations</a>
+	<a href="Charts.html">Charts</a>
+	<a href="Pivot Chart.html">Pivot</a>
+</nav>
+
+  <h1>Pivot Chart - Summary</h1>
+  <canvas id="pivotSummaryChart" width="900" height="500"></canvas>
+
+  <script>
+    const pivotLabels = [
+      "Total (Yes)", "Total (No)", "Total (Other, Not Sure, etc)",
+      "Average percentage (Yes)", "Average percentage (No)", "Average percentage (Other, Not Sure, etc)"
+    ];
+
+    const pivotData = {
+      labels: pivotLabels,
+      datasets: [
+        {
+          label: "Field 1",
+          data: [7,5,0,58.3,41.7,0],
+          backgroundColor: "#2196f3"
+        },
+        {
+          label: "Field 2",
+          data: [6,4,2,50.0,33.3,16.7],
+          backgroundColor: "#4caf50"
+        },
+        {
+          label: "Field 3",
+          data: [3,5,4,25.0,41.7,33.3],
+          backgroundColor: "#f44336"
+        },
+        {
+          label: "Field 4",
+          data: [7,4,1,58.3,33.3,8.3],
+          backgroundColor: "#ff9800"
+        },
+        {
+          label: "Field 5",
+          data: [6,2,4,50.0,16.7,33.3],
+          backgroundColor: "#9c27b0"
+        },
+        {
+          label: "Field 6",
+          data: [3,2,5,25.0,16.7,41.7],
+          backgroundColor: "#795548"
+        },
+        {
+          label: "Field 7",
+          data: [8,3,1,66.7,25.0,8.3],
+          backgroundColor: "#009688"
+        },
+        {
+          label: "Field 8",
+          data: [5,4,3,41.7,33.3,25.0],
+          backgroundColor: "#607d8b"
+        },
+        {
+          label: "Field 9",
+          data: [11,1,0,91.7,8.3,0],
+          backgroundColor: "#673ab7"
+        },
+        {
+          label: "Field 10",
+          data: [8,4,0,66.7,33.3,0],
+          backgroundColor: "#3f51b5"
+        }
+      ]
+    };
+
+    new Chart(document.getElementById('pivotSummaryChart'), {
+      type: 'bar',
+      data: pivotData,
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { position: 'right' },
+          title: { display: true, text: 'Overall Summary of Data' }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Amounts and Averages Achieved' } },
+          y: { title: { display: true, text: 'TITLES' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+<head>
+    
+    <title>Survey Responses</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        nav {
+            background-color: #222;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://wallpaperaccess.com/full/5651982.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    min-height: 100vh;
+  }
+
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #00ffe7;
+    text-shadow: 0 0 10px #00ffe7;
+  }
+
+  canvas {
+    display: block;
+    margin: 20px auto;
+    background: #ffffffdd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+
+    </style>
+</head>
+<body>
+<nav>
+    <a href="Home page.html">Home</a>
+    <a href="Data Table.html">Data Table</a>
+    <a href="Survey Calculations.html">Calculations</a>
+	<a href="Charts.html">Charts</a>
+	<a href="Pivot Chart.html">Pivot</a>
+</nav>
+
+<h2>Survey Responses</h2>
+<table id="surveyTable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            
+      <th>ID</th>
+      <th>Do you think Smart Wearable devices require an internet connection to function?</th>
+      <th>Are fitness trackers capable of monitoring heart rate?</th>
+      <th>Do most smartwatches support third-party app installations?</th>
+      <th>Do wearable devices use Bluetooth to connect to smartphones?</th>
+      <th>Are privacy issues a common concern?</th>
+      <th>Have you ever experienced discomfort while wearing a smart wearable device?</th>
+      <th>Have you ever stopped using a wearable device because it was too complicated to use?</th>
+      <th>Would you recommend your current wearable device to someone else based on your experience?</th>
+      <th>Do you see the role of smart wearables evolving in healthcare and medical monitoring?</th>
+      <th>Do you feel that smart wearable devices significantly improve your daily life?</th>
+			
+        </tr>
+    </thead>
+    <tbody>
+	
+        <tr><td>1</td><td>Yes</td><td>Yes</td><td>Not sure</td><td>Yes</td><td>I do not own one</td><td>Occasionally</td><td>Yes</td><td>Not Sure</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>2</td><td>No</td><td>Yes</td><td>Not sure</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>3</td><td>Yes</td><td>Yes</td><td>No</td><td>Probably</td><td>Yes</td><td>Occasionally</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+        <tr><td>4</td><td>No</td><td>No</td><td>No</td><td>No</td><td>Yes</td><td>Occasionally</td><td>No</td><td>No</td><td>Yes</td><td>No</td></tr>
+        <tr><td>5</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>I do not own one</td><td>Yes</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>6</td><td>Yes</td><td>Yes</td><td>No</td><td>Yes</td><td>I do not own one</td><td>Occasionally</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>7</td><td>Yes</td><td>Yes</td><td>Not sure</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+        <tr><td>8</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>Yes</td><td>Occasionally</td><td>Yes</td><td>No</td><td>No</td></tr>
+        <tr><td>9</td><td>No</td><td>No</td><td>No</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Not Sure</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>10</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>I don't use smart wearable devices</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>11</td><td>No</td><td>Probably</td><td>No</td><td>Yes</td><td>I do not own one</td><td>I don't use smart wearable devices</td><td>Yes</td><td>Not Sure</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>12</td><td>Yes</td><td>Probably</td><td>Not sure</td><td>Yes</td><td>Yes</td><td>Occasionally</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#surveyTable').DataTable({
+            pageLength: 5,
+            lengthMenu: [5, 10, 25, 50],
+            scrollX: true
+        });
+    });
+	backgroundColor: ['#00ffe7', '#ff6384', '#999']
+</script>
+
+</body>
+</html>
